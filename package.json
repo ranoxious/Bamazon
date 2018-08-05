@@ -1,0 +1,27 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranoxious/Bamazon.git"
+  },
+  "keywords": [
+    "Bamazon",
+    "Application"
+  ],
+  "author": "Nock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranoxious/Bamazon/issues"
+  },
+  "homepage": "https://github.com/ranoxious/Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^6.0.0",
+    "mysql": "^2.16.0"
+  }
+}
