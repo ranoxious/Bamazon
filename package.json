@@ -1,0 +1,26 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "bamazon stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranoxious/Bamazon.git"
+  },
+  "keywords": [
+    "Bamazon",
+    "Sql"
+  ],
+  "author": "Nock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranoxious/Bamazon/issues"
+  },
+  "homepage": "https://github.com/ranoxious/Bamazon#readme",
+  "dependencies": {
+    "require": "^2.4.20"
+  }
+}
