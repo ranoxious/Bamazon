@@ -28,15 +28,15 @@ function afterConnection() {
 
       console.log(
         "ID: " +
-        res[i].id +
-        " || Product Name: " +
-        res[i].product_name +
-        " || Department Name: " +
-        res[i].department_name +
-        " || Price: $" +
-        res[i].price +
-        " || Stock Quantity: " +
-        res[i].stock_quantity
+        res[i].Item_Id +
+        " || Product_Name: " +
+        res[i].Product_Name +
+        " || Department_Name: " +
+        res[i].Department_Name +
+        " || Price:" +
+        res[i].Price +
+        " || Stock_Quantity: " +
+        res[i].Stock_Quantity
       );
 
     }
