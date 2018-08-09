@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
 
   user: "root",
 
-  password: "",
+  password: "9csp[k;Z<",
   database: "Bamazon"
 });
 
@@ -49,7 +49,7 @@ function afterConnection() {
 function placeOrder() {
   inquirer
     .prompt([{
-      name: "id",
+      name: "Id",
       type: "input",
       message: "Enter the ID of the product you would like to buy: "
     }, {
@@ -59,29 +59,29 @@ function placeOrder() {
     }])
     .then(function (answer) {
 
-      connection.query("SELECT * FROM products WHERE ?", {
-        id: answer.id
+    var query =  connection.query("SELECT * FROM products WHERE ?", {
+        Item_ID: answer.Id
       }, function (err, res) {
         if (err) throw err;
 
         var orderQuantity = answer.quantity;
-        var product = res[0].product_name;
-        var cost = res[0].price;
-        var stock = res[0].stock_quantity;
+        var product = res[0].Product_Name;
+        var cost = res[0].Price;
+        var stock = res[0].Stock_Quantity;
 
         if (orderQuantity < stock) {
           console.log("\n");
           console.log("You ordered: " + orderQuantity + " of " + product + " at a cost of $" + cost + " each");
-          console.log("Your total cost is $" + cost * orderQuantity);
+          console.log("Your total cost is $" + parseInt(cost) * parseInt(orderQuantity));
           console.log("PLEASE COME BACK SOON.");
 
           var newStockAmount = stock - orderQuantity;
           var query = connection.query(
             "UPDATE products SET ? WHERE ?", [{
-                stock_quantity: newStockAmount
+                Stock_Quantity: newStockAmount
               },
               {
-                id: answer.id
+                Item_Id: answer.Item_Id
               }
             ],
             function (err, res) {
@@ -94,5 +94,9 @@ function placeOrder() {
           placeOrder();
         }
       });
+
+
+console.log(query.sql);
+
     });
 };
